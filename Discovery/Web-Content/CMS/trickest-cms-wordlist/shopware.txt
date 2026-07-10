@@ -81,6 +81,10 @@ custom/plugins/.gitkeep
 .agents/skills/shopware-change-scope/SKILL.md
 .agents/skills/shopware-change-scope/agents/openai.yaml
 .agents/skills/README.md
+.agents/skills/nightly-triage/SKILL.md
+.agents/skills/nightly-triage/references/PIPELINE.md
+.agents/skills/nightly-triage/references/REPRODUCTION.md
+.agents/skills/nightly-triage/references/ROUTING.md
 phpstan-paths.php
 releases.json
 devenv.nix
@@ -2384,6 +2388,7 @@ src/Core/Framework/Event/MailAware.php
 src/Core/Framework/Event/OrderAware.php
 src/Core/Framework/Event/BeforeSendResponseEvent.php
 src/Core/Framework/Event/EventData/EventDataCollection.php
+src/Core/Framework/Event/EventData/FormDataObjectType.php
 src/Core/Framework/Event/EventData/EntityType.php
 src/Core/Framework/Event/EventData/MailRecipientStruct.php
 src/Core/Framework/Event/EventData/ArrayType.php
@@ -5066,6 +5071,7 @@ src/Core/Content/MailTemplate/Service/MailDataSimulator.php
 src/Core/Content/MailTemplate/Service/Event/MailTemplateRenderContextEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailErrorEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEvent.php
+src/Core/Content/MailTemplate/Service/Event/MailDataSimulatorFormDataEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailSentEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailDataSimulatorFieldEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailBeforeSentEvent.php
@@ -5873,6 +5879,7 @@ src/Core/Content/Media/Upload/PresignedUploadPreparePayload.php
 src/Core/Content/Media/Upload/PresignedUploadFinalizePayload.php
 src/Core/Content/Media/Upload/MediaFileCleanupService.php
 src/Core/Content/Media/Upload/MediaUploadParameters.php
+src/Core/Content/Media/Upload/MediaFileExtensionListProvider.php
 src/Core/Content/Media/Upload/MediaUploadService.php
 src/Core/Content/Media/Upload/PresignedUrlResult.php
 src/Core/Content/Media/Upload/PresignedUrlGeneratorInterface.php
@@ -11655,6 +11662,7 @@ src/Administration/Resources/app/administration/src/app/directive/click-outside.
 src/Administration/Resources/app/administration/src/app/directive/tooltip.directive.spec.js
 src/Administration/Resources/app/administration/src/app/directive/dragdrop.directive.ts
 src/Administration/Resources/app/administration/src/app/mixin/salutation.mixin.spec.js
+src/Administration/Resources/app/administration/src/app/mixin/notification-translation.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/rule-between-operator.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/placeholder.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/validation.mixin.ts
@@ -11663,6 +11671,7 @@ src/Administration/Resources/app/administration/src/app/mixin/rule-container.mix
 src/Administration/Resources/app/administration/src/app/mixin/user-settings.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/position.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/remove-api-error.mixin.ts
+src/Administration/Resources/app/administration/src/app/mixin/notification-translation.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/form-field.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/user-settings.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/sw-inline-snippet.mixin.spec.js
@@ -14064,7 +14073,6 @@ tests/migration/Core/V6_6/Migration1707807389ChangeAvailableDefaultTest.php
 tests/migration/Core/V6_6/Migration1718615305AddEuToCountryTableTest.php
 tests/migration/Core/V6_6/Migration1739198249FixOrderDeliveryStateMachineNameTest.php
 tests/migration/Core/V6_6/Migration1713345551AddAppManagedColumnTest.php
-tests/migration/Core/V6_6/Migration1671723392AddWebhookLifetimeConfigTest.php
 tests/migration/Core/V6_6/Migration1765983627CreateDeletedAppsTableTest.php
 tests/migration/Core/V6_6/Migration1735112885AddDefaultSearchResultSortingTest.php
 tests/migration/Core/V6_6/Migration1733745893createTagStorageTableTest.php
@@ -14239,7 +14247,6 @@ tests/migration/Administration/V6_7/Migration1744203319MailTemplateTest.php
 tests/migration/Administration/V6_7/Migration1757057005MailTemplateTest.php
 tests/migration/SalesChannelTranslatedNameResult.json
 tests/migration/MigrationTestTrait.php
-tests/migration/Elasticsearch/V6_5/Migration1689084023AdminElasticsearchIndexTaskTest.php
 tests/migration/Translations.php
 tests/migration/MailTemplateTranslationResult.php
 tests/migration/MigrationUntouchedDbTestTrait.php
@@ -14658,6 +14665,7 @@ tests/integration/Core/Framework/DataAbstractionLayer/Field/RemoteAddressFieldTe
 tests/integration/Core/Framework/DataAbstractionLayer/Field/ListFieldTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Event/EntityWrittenEventSerializationTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Event/EntityLoadedEventFactoryTest.php
+tests/integration/Core/Framework/DataAbstractionLayer/ExcludeFieldsReaderTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/EntityProtection/EntityProtectionValidatorTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/EntityExtensionRegisteredTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Commands/RefreshIndexCommandTest.php
@@ -15886,7 +15894,6 @@ tests/acceptance/tsconfig.json
 tests/acceptance/.eslintignore
 tests/acceptance/package-lock.json
 tests/acceptance/.prettierignore
-tests/acceptance/.prettierrc
 tests/acceptance/fixtures/AcceptanceTest.ts
 tests/acceptance/fixtures/HomeProducts.ts
 tests/acceptance/bin/createTask.js
@@ -16629,6 +16636,7 @@ tests/unit/Core/Framework/Notification/NotificationServiceTest.php
 tests/unit/Core/Framework/Notification/Api/NotificationControllerTest.php
 tests/unit/Core/Framework/Serializer/StructNormalizerTest.php
 tests/unit/Core/Framework/Event/EventData/EventDataCollectionTest.php
+tests/unit/Core/Framework/Event/EventData/FormDataObjectTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ArrayTypeTest.php
 tests/unit/Core/Framework/Event/EventData/EntityCollectionTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ScalarValueTypeTest.php
@@ -16994,6 +17002,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/BucketA
 tests/unit/Core/Framework/DataAbstractionLayer/Search/SearchConfigLoaderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/Query/ScoreQueryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/Grouping/FieldGroupingTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Search/CriteriaExcludeFieldsTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/CachedCompressedCriteriaDecoderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/TechnicalNameExceptionHandlerTest.php
@@ -17095,6 +17104,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Exception/InvalidSortingDire
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityForeignKeyResolverTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Common/IteratorFactoryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityDefinitionQueryHelperTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityReaderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SqlHelperTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilderTest.php
@@ -17615,9 +17625,13 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/StoreApiGeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi3GeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/CachedEntitySchemaGeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApiFileLoaderTest.php
+tests/unit/Core/Framework/Api/Serializer/JsonApiEncodingResultTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonSalesChannelApiEncoderTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonApiEncoderTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonApiDecoderTest.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestItemEntity.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestParentEntity.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestChildEntity.php
 tests/unit/Core/Framework/Api/Serializer/_fixtures/TestAttributeEntity.php
 tests/unit/Core/Framework/Api/Serializer/RecordTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonEntityEncoderTest.php
@@ -18185,6 +18199,7 @@ tests/unit/Core/Content/Media/Upload/MediaUploadParametersTest.php
 tests/unit/Core/Content/Media/Upload/PresignedMediaUploadServiceTest.php
 tests/unit/Core/Content/Media/Upload/ExternalThumbnailDataTest.php
 tests/unit/Core/Content/Media/Upload/MediaUploadServiceTest.php
+tests/unit/Core/Content/Media/Upload/MediaFileExtensionListProviderTest.php
 tests/unit/Core/Content/Media/Upload/MediaFileCleanupServiceTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadFinalizePayloadTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadUrlGeneratorTest.php
@@ -19060,6 +19075,7 @@ tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV2Test.php
 tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV3Test.php
 tests/unit/Storefront/Framework/Captcha/BasicCaptchaTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaRouteListenerTest.php
+tests/unit/Storefront/Framework/Captcha/HoneypotCaptchaTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaCookieCollectListenerTest.php
 tests/unit/Storefront/Framework/App/Template/IconTemplateLoaderTest.php
 tests/unit/Storefront/Framework/Seo/StorefrontCategoryUrlGeneratorTest.php

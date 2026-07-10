@@ -605,7 +605,6 @@ Doc
 EmbedSlideshow
 Entrez
 Explodingstuff
-Features/SpinaBifidaProgram/
 Fragment/SysConfig
 Germany/kleinunternehmen/euga/detail.mspx?
 Germany/kleinunternehmen/euga/results.mspx?
@@ -635,15 +634,6 @@ TOCLinksForCrawlers*
 Taxonomy/CommonTree
 Taxonomy/Selector
 TeamPresent
-TemplatePackage/3.0/Templates
-TemplatePackage/3.0/examples
-TemplatePackage/4.0/docs
-TemplatePackage/4.0/gallery-internal
-TemplatePackage/Templates
-TemplatePackage/examples
-TemplatePackage/gadgets
-TemplatePackage/modules
-TemplatePackage/subtopic
 Users
 View
 ViewDoc
@@ -702,10 +692,7 @@ _/tfhub
 _/transparencyreport
 _allComments.html
 _allCommentsClassicBlog.html
-_borders
-_derived
 _email.html
-_fpclass
 _global_notifications
 _jsn.json
 _jsnp.js
@@ -726,9 +713,7 @@ _nimbusJson.json
 _nimbusJsonp.js
 _nimbusJsonpStatic.js
 _nitf.xml
-_overlay
 _print.html
-_private
 _prq
 _qa.html
 _query=
@@ -741,13 +726,6 @@ _search.html
 _seo.html
 _singlePage.html
 _smt=
-_themes
-_vti_bin
-_vti_cnf
-_vti_log
-_vti_map
-_vti_pvt
-_vti_txt
 a
 a/bz?
 aaut
@@ -1133,7 +1111,6 @@ company
 companyDir
 compare
 compressiontest
-concussion/HeadsUp/training/
 config.js
 connections
 consumers/archive
@@ -1467,7 +1444,6 @@ fizzy/admin
 flag
 flarepoint
 flights
-flu/espanol/
 flutter-canvaskit
 folder
 follow
@@ -1705,10 +1681,10 @@ hp/video
 hpc/*/supported-applications.aspx?
 hpm
 hpmob
-http://archive.org/robots.txt
-http://cdc.gov/robots.txt
-http://instagram.com/robots.txt
-http://s3.amazonaws.com/robots.txt
+http://accounts.google.com/robots.txt
+http://api.whatsapp.com/robots.txt
+http://apps.apple.com/robots.txt
+http://sites.google.com/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
 hz/help/contact/*/message/$
@@ -2009,7 +1985,6 @@ messages
 messaging
 meta-ai-answers
 mh255com
-migration/
 mkc=*&
 mld?
 mnp_utility.mspx?
@@ -2074,7 +2049,6 @@ newsroom/dae
 newsround
 newssearch
 newsstand
-niosh/archive/
 nlmcatalog/?term=
 node/add/
 nonprofits/account
@@ -2380,7 +2354,6 @@ search?*cashtagRestId=
 search?*tbm=map
 search?q$
 search?q=
-search?q=%23
 search\?
 search_history
 sections
@@ -2762,6 +2735,8 @@ station/idst.
 stations/force/force_localization.php?
 stats?gid=
 store
+store/XboxComMsCom3PAdsOptOutCookieSync.html
+store/XboxComMsComCartMuidSync.html
 store/account
 store/addtocart
 store/apps/collection/p3_details_
@@ -2880,18 +2855,6 @@ taxation_customs/tax-cfw-interactive-brochure_en
 taxonomy/?term=
 tbproxy
 templateabuse
-templatepackage/3.0/Templates
-templatepackage/3.0/examples
-templatepackage/3.0/templates
-templatepackage/4.0/docs
-templatepackage/4.0/gallery-internal
-templatepackage/Templates
-templatepackage/dmat
-templatepackage/examples
-templatepackage/gadgets
-templatepackage/modules
-templatepackage/subtopic
-templatepackage/templates
 templates
 templates/search
 terms-of-use
@@ -2943,7 +2906,6 @@ transparencyregister/public/staticPage/displayStaticPage.do
 trap
 travel-frontend/images
 travel-vacations
-travel/
 travel/2013/aug/22/been-there-readers-competition?
 travel/api
 travel/clk
@@ -3291,7 +3253,7 @@ wiki/Wikipedia%3AVandalismi_in_corso
 wiki/Wikipedia%3AVandalismusmeldung
 wiki/Wikipedia%3AVandalismusmeldung%2F
 wiki/Wikipedia%3AVermittlungsausschuss
-wiki/Wikipedia%3AVermittlungsausschuss%2Fhttp://dropbox.com/robots.txt
+wiki/Wikipedia%3AVermittlungsausschuss%2Fhttp://developers.google.com/robots.txt
 wiki/Wikipedia%3AVotes_for_deletion
 wiki/Wikipedia%3AWikiProject_Deletion_sorting
 wiki/Wikipedia%3AWikiProject_Spam
@@ -3460,7 +3422,7 @@ wiki/Wikipedia_Diskussion:Checkuser%2F
 wiki/Wikipedia_Diskussion:Spam-Blacklist-Log
 wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://itunes.apple.com/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://eventbrite.com/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
